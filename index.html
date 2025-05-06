@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30-Day Confidence Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .challenge-box {
+      background: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>30-Day Confidence Challenge</h1>
+  <p>Enter the day you're on (1–30):</p>
+  <input type="number" id="dayInput" min="1" max="30" placeholder="e.g. 5">
+  <button onclick="showChallenge()">Get Challenge</button>
+
+  <div class="challenge-box" id="output" style="display:none;">
+    <div class="label">Planned Challenge:</div>
+    <p id="planned"></p>
+    <div class="label">Random Challenge:</div>
+    <p id="random"></p>
+  </div>
+
+  <script>
+    const challenges = [
+      "Give 5 people a genuine compliment.",
+      "Walk into a room with confident posture and make eye contact with at least 3 people.",
+      "Speak up in a group or meeting — share your opinion or ask a question.",
+      "Do something alone — café, walk, or errand — without using your phone.",
+      "Say 3 things you like about yourself in the mirror, out loud.",
+      "Try something new you've been avoiding out of fear.",
+      "Write down 3 things you did well today.",
+      "Dress in a way that makes you feel confident today.",
+      "Send a message to someone you haven’t spoken to in a while.",
+      "Set a small goal and complete it by the end of the day.",
+      "Learn something new and tell someone about it.",
+      "Practice power poses for 2 minutes before a task.",
+      "Write a short paragraph about your strengths.",
+      "Record yourself talking about something you’re passionate about — then watch it.",
+      "Say 'no' to something that drains your energy.",
+      "Take a photo of yourself today and say something kind about how you look.",
+      "Write a list of 5 things you’re proud of.",
+      "Ask for feedback from someone you trust.",
+      "Do one small thing you’ve been putting off.",
+      "Look people in the eye when greeting them today.",
+      "Speak a positive affirmation aloud every hour for 8 hours.",
+      "Take a different route today and observe what’s new.",
+      "Write down 10 things you’re grateful for.",
+      "Give someone a small but thoughtful gift or message.",
+      "Introduce yourself to someone new.",
+      "Make a confident decision without second-guessing.",
+      "Stand or sit at the front of a room instead of hiding in the back.",
+      "Turn off all notifications and be present with yourself for an hour.",
+      "Teach someone something you know well.",
+      "Celebrate a win — big or small — with a treat or reward."
+    ];
+
+    function showChallenge() {
+      const day = parseInt(document.getElementById("dayInput").value);
+      if (day >= 1 && day <= 30) {
+        document.getElementById("planned").innerText = challenges[day - 1];
+        const randomIndex = Math.floor(Math.random() * challenges.length);
+        document.getElementById("random").innerText = challenges[randomIndex];
+        document.getElementById("output").style.display = "block";
+      } else {
+        alert("Please enter a number between 1 and 30.");
+      }
+    }
+  </script>
+</body>
+</html>
