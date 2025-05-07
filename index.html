@@ -5,35 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>30-Day Confidence Challenge</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-      background: #f4f4f4;
-      color: #333;
+  :root {
+    --bg: #f4f4f4;
+    --text: #333;
+    --box-bg: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1e1e;
+      --text: #f9f9f9;
+      --box-bg: #2c2c2c;
     }
-    h1 {
-      text-align: center;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      margin-top: 10px;
-      width: 100%;
-    }
-    .challenge-box {
-      background: #fff;
-      border-radius: 6px;
-      padding: 15px;
-      margin-top: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .label {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  </style>
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    background: var(--box-bg);
+    color: var(--text);
+    border: 1px solid #888;
+  }
+
+  .challenge-box {
+    background: var(--box-bg);
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
   <h1>30-Day Confidence Challenge</h1>
