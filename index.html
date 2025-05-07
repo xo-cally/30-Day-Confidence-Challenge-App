@@ -9,14 +9,14 @@
     --bg: #f4f4f4;
     --text: #333;
     --box-bg: #fff;
+    --btn-bg: #ddd;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1e1e1e;
-      --text: #f9f9f9;
-      --box-bg: #2c2c2c;
-    }
+  body.dark {
+    --bg: #1e1e1e;
+    --text: #f9f9f9;
+    --box-bg: #2c2c2c;
+    --btn-bg: #444;
   }
 
   body {
@@ -26,6 +26,7 @@
     margin: auto;
     background: var(--bg);
     color: var(--text);
+    transition: background 0.3s, color 0.3s;
   }
 
   h1 {
@@ -37,9 +38,10 @@
     font-size: 16px;
     margin-top: 10px;
     width: 100%;
-    background: var(--box-bg);
+    background: var(--btn-bg);
     color: var(--text);
     border: 1px solid #888;
+    transition: background 0.3s, color 0.3s;
   }
 
   .challenge-box {
@@ -58,6 +60,7 @@
 </head>
 <body>
   <h1>30-Day Confidence Challenge</h1>
+  <button onclick="toggleDarkMode()" id="themeButton">Switch to Dark Mode</button>
   <p>Enter the day you're on (1–30):</p>
   <input type="number" id="dayInput" min="1" max="30" placeholder="e.g. 5">
   <button onclick="showChallenge()">Get Challenge</button>
